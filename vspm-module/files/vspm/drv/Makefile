@@ -13,14 +13,10 @@ U_INCLUDE += -I$(PWD)/../include
 EXTRA_CFLAGS += $(U_INCLUDE)
 
 all:
-	make -C $(KERNELSRC) M=$(PWD) modules
+	make -C $(KERNELDIR) M=$(PWD) modules
 clean:
-	make -C $(KERNELSRC) M=$(PWD) clean
+	make -C $(KERNELDIR) M=$(PWD) clean
 install:
-	$(CP) ../include/vspm_public.h $(KERNELSRC)/include
-	$(CP) ../include/vspm_cmn.h $(KERNELSRC)/include
-	$(CP) ../include/vsp_drv.h $(KERNELSRC)/include
-	$(CP) ../include/fdp_drv.h $(KERNELSRC)/include
 	$(CP) ../include/vspm_cmn.h $(INCSHARED)
 	$(CP) ../include/vsp_drv.h $(INCSHARED)
 	$(CP) ../include/fdp_drv.h $(INCSHARED)
