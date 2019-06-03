@@ -1454,16 +1454,6 @@ static void vsp_ins_replace_part_uds_module(
 			r_temp *= ratio;
 		}
 
-		/* add horizontal filter phase of control register */
-		uds_info->val_ctrl |= VSP_UDS_CTRL_AMDSLH;
-
-		/* replace scaling filter horizontal phase */
-		if (l_temp & 0xfff)
-			uds_info->val_hphase = (4096 - (l_temp & 0xfff)) << 16;
-		else
-			uds_info->val_hphase = 0;
-		if (r_temp & 0xfff)
-			uds_info->val_hphase |= (4096 - (r_temp & 0xfff));
 	} else {
 		l_temp *= 4096;
 		r_temp *= 4096;
