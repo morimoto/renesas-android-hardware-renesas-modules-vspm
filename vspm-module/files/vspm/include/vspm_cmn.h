@@ -113,10 +113,6 @@ enum {
 #define FCP_TL_DISABLE			(0)
 #define FCP_TL_ENABLE			(1)
 
-struct vspm_init_vsp_t {
-	/* reserved */
-};
-
 struct vspm_init_fdp_t {
 	unsigned int hard_addr[2];
 };
