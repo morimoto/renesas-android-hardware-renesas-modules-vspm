@@ -115,6 +115,7 @@ enum {
 
 struct vspm_init_vsp_t {
 	/* reserved */
+	unsigned int reserved[2];
 };
 
 struct vspm_init_fdp_t {
